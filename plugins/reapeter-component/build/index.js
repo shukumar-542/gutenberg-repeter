@@ -64,82 +64,58 @@ function Edit({
   // console.log(teams);
   // teams.map((member)=> (member.social.default.map((soc)=>console.log(soc))))
   const updateMember = (index, key, value) => {
-    // console.log(index,key,value);
     const newItem = [...teams];
+    // console.log(newItem);
     newItem[index][key] = value;
     setAttributes({
       teams: newItem
-    });
-  };
-  const addSocialLink = (index, updateLink) => {
-    // console.log(index,updateLink);
-    const newUpdate = [...teams];
-    newUpdate[index].socialLinks.push(updateLink);
-    setAttributes({
-      newUpdate
     });
   };
   const addMember = () => {
     const newMember = [...teams];
     newMember.push({
       name: "",
-      position: ""
+      position: "",
+      facebook: "",
+      github: "",
+      twitter: ""
     });
     setAttributes({
       teams: newMember
     });
   };
-  const addNewSocial = (index, link) => {
-    // console.log(index, link);
-    const updateTeam = [...teams];
-    updateTeam[index].socialLinks.push(link);
-    setAttributes({
-      updateTeam
-    });
-    // const updatedTeams = [...teams];
-    // updatedTeams[index].socialLinks.push(link);
-    // setAttributes(updatedTeams);
-  };
-
-  return (
-    // <p { ...useBlockProps() }>
-    // 	{ __( 	
-    // 		'Reapeter Component – hello from the editor!',
-    // 		'reapeter-component'
-    // 	) }
-    // </p>
-    (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
-      title: "team member",
-      initialOpen: false
-    }, teams.map((item, index) => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      key: index
-    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
-      label: "name",
-      value: item.name,
-      onChange: value => updateMember(index, "name", value)
-    })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
-      label: "position",
-      value: item.position,
-      onChange: value => updateMember(index, "position", value)
-    }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, "social Links", item?.socialLinks?.map((link, linkIndex) => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelRow, {
-      key: linkIndex
-    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
-      value: link,
-      onChange: value => {
-        const updateLink = [...item.socialLinks];
-        updateLink[linkIndex] = value;
-        addSocialLink(index, updateLink);
-      }
-    }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Button, {
-      onClick: () => addNewSocial(index, "")
-    }, "Add Social Link"))))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Button, {
-      onClick: addMember
-    }, "Add Member")))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.useBlockProps)()
-    }, teams.map(member => {
-      return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, member.name), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, member.position));
-    })))
-  );
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
+    title: "team member",
+    initialOpen: false
+  }, teams.map((item, index) => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    key: index
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
+    label: "namess",
+    value: item.name,
+    onChange: value => updateMember(index, "name", value)
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
+    label: "position",
+    value: item.position,
+    onChange: value => updateMember(index, "position", value)
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
+    label: "facebook",
+    value: item.facebook,
+    onChange: value => updateMember(index, "facebook", value)
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
+    label: "github",
+    value: item.github,
+    onChange: value => updateMember(index, "github", value)
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
+    label: "twitter",
+    value: item.twitter,
+    onChange: value => updateMember(index, "twitter", value)
+  }))))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Button, {
+    onClick: addMember
+  }, "Add Member")))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.useBlockProps)()
+  }, teams.map(member => {
+    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, member.name), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, member.position), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, member.facebook), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, member.github), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, member.twitter));
+  })));
 }
 
 /***/ }),
@@ -235,10 +211,23 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function save() {
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
-    ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save()
-  }, 'Reapeter Component – hello from the saved content!dd');
+function save({
+  attributes
+}) {
+  const {
+    teams
+  } = attributes;
+  console.log(teams);
+  return (
+    // <p { ...useBlockProps.save() }>
+    // 	{ 'Reapeter Component – hello from the saved content!dd' }
+    // </p>
+    (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save()
+    }, teams.length && teams.map((member, index) => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      key: index
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, member.name), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, member.position), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, member.facebook), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, member.github), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, member.twitter))))
+  );
 }
 
 /***/ }),
@@ -323,7 +312,7 @@ module.exports = window["wp"]["i18n"];
   \************************/
 /***/ (function(module) {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/reapeter-component","version":"0.1.0","title":"Reapeter Component","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false},"textdomain":"reapeter-component","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","attributes":{"teams":{"type":"array","default":[{"name":"","position":"","socialLinks":[""]}]}}}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/reapeter-component","version":"0.1.0","title":"Reapeter Component","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false},"textdomain":"reapeter-component","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","attributes":{"teams":{"type":"array","default":[{"name":"","position":"","facebook":"","github":"","twitter":""}]}}}');
 
 /***/ })
 

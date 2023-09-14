@@ -47,42 +47,23 @@ export default function Edit({ attributes, setAttributes }) {
 	// console.log(teams);
 	// teams.map((member)=> (member.social.default.map((soc)=>console.log(soc))))
 	const updateMember = (index, key, value) => {
-		// console.log(index,key,value);
 		const newItem = [...teams]
+		// console.log(newItem);
 		newItem[index][key] = value;
 		setAttributes({ teams: newItem })
 
 	}
-	const addSocialLink =(index,updateLink)=>{
-		// console.log(index,updateLink);
-		const newUpdate  = [...teams]
-		newUpdate[index].socialLinks.push(updateLink)
-		setAttributes({ newUpdate})
-
-
-	}
+	
+	
 	const addMember = () => {
 		const newMember = [...teams];
-		newMember.push({ name: "", position: "" })
+		newMember.push({ name: "", position: "", facebook :"", github : "",twitter :"" })
 		setAttributes({ teams: newMember })
 	}
 
-	const addNewSocial = (index,link) => {
-		// console.log(index, link);
-		const updateTeam = [...teams]
-		updateTeam[index].socialLinks.push(link)
-		setAttributes({updateTeam})
-		// const updatedTeams = [...teams];
-		// updatedTeams[index].socialLinks.push(link);
-		// setAttributes(updatedTeams);
-	};
+	
 	return (
-		// <p { ...useBlockProps() }>
-		// 	{ __( 	
-		// 		'Reapeter Component – hello from the editor!',
-		// 		'reapeter-component'
-		// 	) }
-		// </p>
+
 		<>
 			<InspectorControls>
 				<PanelBody title="team member" initialOpen={false}>
@@ -92,7 +73,7 @@ export default function Edit({ attributes, setAttributes }) {
 								<div key={index}>
 									<PanelRow>
 										<TextControl
-											label="name"
+											label="namess"
 											value={item.name}
 											onChange={(value) => updateMember(index, "name", value)}
 										/>
@@ -104,31 +85,33 @@ export default function Edit({ attributes, setAttributes }) {
 											onChange={(value) => updateMember(index, "position", value)}
 										/>
 									</PanelRow>
+
+								<PanelRow>
+									<TextControl
+										label="facebook"
+										value={item.facebook}
+										onChange={(value) => updateMember(index, "facebook", value)}
+									/>
+								</PanelRow>
+								<PanelRow>
+									<TextControl
+										label="github"
+										value={item.github}
+										onChange={(value) => updateMember(index, "github", value)}
+									/>
+								</PanelRow>
+								<PanelRow>
+									<TextControl
+										label="twitter"
+										value={item.twitter}
+										onChange={(value) => updateMember(index, "twitter", value)}
+									/>
+								</PanelRow>
 								</div>
-								<div>
-									social Links
 
-									{
-										item?.socialLinks?.map((link, linkIndex) => (
-											<PanelRow key={linkIndex}>
-												<TextControl
-													value={link}
-													onChange={(value) => {
-														const updateLink = [...item.socialLinks]
-														updateLink[linkIndex] = value
-														addSocialLink(index, updateLink)
-													}}
-												/>
-											</PanelRow>
-										))
-									}
-									<PanelRow>
-										<Button onClick={()=>addNewSocial(index, "")}>
-											Add Social Link
-										</Button>
-									</PanelRow>
 
-								</div >
+
+
 							</>
 						))
 					}
@@ -144,6 +127,9 @@ export default function Edit({ attributes, setAttributes }) {
 						return <div>
 							<p>{member.name}</p>
 							<p>{member.position}</p>
+							<p>{member.facebook}</p>
+							<p>{member.github}</p>
+							<p>{member.twitter}</p>
 						</div>
 					})
 				}

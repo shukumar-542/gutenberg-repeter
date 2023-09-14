@@ -27,11 +27,24 @@ import {
 	TextControl,
 	Button,
 } from "@wordpress/components";
-export default function save() {
+export default function save({ attributes }) {
+	const { teams } = attributes;
+	console.log(teams);
 	return (
-		<p { ...useBlockProps.save() }>
-			{ 'Reapeter Component – hello from the saved content!dd' }
-		</p>
-		
+		// <p { ...useBlockProps.save() }>
+		// 	{ 'Reapeter Component – hello from the saved content!dd' }
+		// </p>
+		<div {...useBlockProps.save()}>
+			{teams.length && teams.map((member, index) => (
+				<div key={index}>
+					<p>{member.name}</p>
+					<p>{member.position}</p>
+					<p>{member.facebook}</p>
+					<p>{member.github}</p>
+					<p>{member.twitter}</p>
+				
+				</div>
+			))}
+		</div>
 	);
 }
