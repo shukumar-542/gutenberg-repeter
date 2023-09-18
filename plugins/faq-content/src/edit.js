@@ -11,7 +11,7 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps } from '@wordpress/block-editor';
+import { useBlockProps, RichText } from '@wordpress/block-editor';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -20,7 +20,7 @@ import { useBlockProps } from '@wordpress/block-editor';
  * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
  */
 import './editor.scss';
-import Collapse from '@kunukn/react-collapse';
+import { useState } from '@wordpress/element';
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -29,43 +29,79 @@ import Collapse from '@kunukn/react-collapse';
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
  *
  * @return {WPElement} Element to render.
+ * 
  */
-export default function Edit() {
-	return (
-		// <p { ...useBlockProps() }>
-		// 	{ __( 'Faq Content – hello from the editor!', 'faq-content' ) }
-		// </p>
-		<section {...useBlockProps()} className="faqs-policy-content pos-relative">
-          <div className="cr-container">
-            <div className="cr-row">
-              <div className="cr-col">
-                <div className="faqs-content-wrapper">
-                    
-                      <div
-                        
-                      >
-                        <button
-                          className="btn"
-                          
-                        >
-                          <span>title</span>
-                          <svg className={''} viewBox="6 0 12 24">
-                            <polygon points="8 0 6 1.8 14.4 12 6 22.2 8 24 18 12" />
-                          </svg>
-                        </button>
-                        <Collapse
-                          className="collapse"
-                         
-                        >
-                          <div className="content-body">
-                            description section
-                          </div>
-                        </Collapse>
-                      </div>
-                </div>
-              </div>
+
+import Collapse from '@kunukn/react-collapse';
+export default function Edit({ attributes, setAttributes }) {
+  const { contentHeading, contentDescription } = attributes
+  // const accordion = document.getElementsByClassName('content-box')
+  // console.log(accordion);
+  // for(let i=0; i<accordion.length; i++){
+  //   accordion[i].addEventListener('click',function(){
+  //     this.classList.toggle('active')
+  //   })
+  // }
+
+  const [isClicked, setIsClicked] = useState(false);
+  const onchangeHeading = (newHeading) => {
+    setAttributes({ contentHeading: newHeading });
+  };
+
+  const onchangeDescription = (newDes) => {
+    setAttributes({ contentDescription: newDes });
+  };
+  const handleClassName = ()=>{
+    setIsClicked(!isClicked)
+  }
+
+  return (
+    // <p { ...useBlockProps() }>
+    // 	{ __( 'Faq Content – hello from the editor!', 'faq-content' ) }
+    // </p>
+
+    <>
+      <section
+        {...useBlockProps()}
+        className="faqs-policy-content pos-relative"
+      >
+        <div class='accordion'>
+          <div class={`content-box ${isClicked  ? 'active' : ''}`}>
+            <div class='label'  onClick={handleClassName}>
+            {/* List One */}
+              <RichText
+                value={contentHeading}
+                tagName="h1"
+                id="content-heading"
+                onChange={onchangeHeading}
+                placeholder={__("Write your text...")}
+              />
+            </div>
+            <div class='content'>
+              {/* <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Odit ipsa dolore doloremque illo
+                    facere delectus officiis quos animi cupiditate ipsam.</p> */}
+              <RichText
+                value={contentDescription}
+                tagName="h4"
+                onChange={onchangeDescription}
+                placeholder={__('Write your text...')}
+              />
             </div>
           </div>
-        </section>
-	);
+          {/* <div class='content-box'>
+            <div class='label'>List Two</div>
+            <div class='content'>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Odit ipsa dolore doloremque illo
+                facere delectus officiis quos animi cupiditate ipsam.</p>
+            </div>
+          </div> */}
+        </div>
+      </section>
+
+
+
+    </>
+  );
 }

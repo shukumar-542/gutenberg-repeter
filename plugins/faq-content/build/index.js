@@ -65,35 +65,69 @@ __webpack_require__.r(__webpack_exports__);
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
  *
  * @return {WPElement} Element to render.
+ * 
  */
-function Edit() {
+
+
+function Edit({
+  attributes,
+  setAttributes
+}) {
+  const {
+    contentHeading,
+    contentDescription
+  } = attributes;
+  // const accordion = document.getElementsByClassName('content-box')
+  // console.log(accordion);
+  // for(let i=0; i<accordion.length; i++){
+  //   accordion[i].addEventListener('click',function(){
+  //     this.classList.toggle('active')
+  //   })
+  // }
+
+  const [isClicked, setIsClicked] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const onchangeHeading = newHeading => {
+    setAttributes({
+      contentHeading: newHeading
+    });
+  };
+  const onchangeDescription = newDes => {
+    setAttributes({
+      contentDescription: newDes
+    });
+  };
+  const handleClassName = () => {
+    setIsClicked(!isClicked);
+  };
   return (
     // <p { ...useBlockProps() }>
     // 	{ __( 'Faq Content – hello from the editor!', 'faq-content' ) }
     // </p>
-    (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("section", {
+
+    (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("section", {
       ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(),
       className: "faqs-policy-content pos-relative"
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      className: "cr-container"
+      class: "accordion"
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      className: "cr-row"
+      class: `content-box ${isClicked ? 'active' : ''}`
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      className: "cr-col"
-    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      className: "faqs-content-wrapper"
-    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
-      className: "btn"
-    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, "title"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
-      className: '',
-      viewBox: "6 0 12 24"
-    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("polygon", {
-      points: "8 0 6 1.8 14.4 12 6 22.2 8 24 18 12"
-    }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)((_kunukn_react_collapse__WEBPACK_IMPORTED_MODULE_4___default()), {
-      className: "collapse"
-    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      className: "content-body"
-    }, "description section"))))))))
+      class: "label",
+      onClick: handleClassName
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+      value: contentHeading,
+      tagName: "h1",
+      id: "content-heading",
+      onChange: onchangeHeading,
+      placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Write your text...")
+    })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      class: "content"
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+      value: contentDescription,
+      tagName: "h4",
+      onChange: onchangeDescription,
+      placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Write your text...')
+    }))))))
   );
 }
 
@@ -283,7 +317,7 @@ module.exports = window["wp"]["i18n"];
 /***/ (function(module) {
 
 "use strict";
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/faq-content","version":"0.1.0","title":"Faq Content","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false},"textdomain":"faq-content","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/faq-content","version":"0.1.0","title":"Faq Content","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false},"textdomain":"faq-content","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","attributes":{"contentHeading":{"type":"string","source":"html","selector":"h1"},"contentDescription":{"type":"string","source":"html","selector":"h4"}}}');
 
 /***/ })
 

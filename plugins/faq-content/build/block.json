@@ -15,5 +15,17 @@
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css",
-  "viewScript": "file:./view.js"
+  "viewScript": "file:./view.js",
+  "attributes": {
+    "contentHeading": {
+      "type": "string",
+      "source": "html",
+      "selector": "h1"
+    },
+    "contentDescription": {
+      "type": "string",
+      "source": "html",
+      "selector": "h4"
+    }
+  }
 }
