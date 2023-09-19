@@ -1,0 +1,326 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+// .wp-block-create-block-service-type {
+// 	border: 1px dotted #f00;
+// }
+
+
+
+
+.major-service .service-illustration1 {
+	position: absolute;
+	top: -371px;
+	left: 0;
+}
+.major-service .service-illustration2 {
+	position: absolute;
+	top: -275px;
+	right: 0;
+}
+.major-service .single-service .service-icon img {
+	display: block;
+	margin: 0 auto;
+}
+
+@media (max-width: 1700px) {
+	.major-service .service-illustration1 {
+		top: -326px;
+		max-width: 416px;
+		width: 100%;
+	}
+	.major-service .service-illustration2 {
+		max-width: 340px;
+		width: 100%;
+		top: -260px;
+	}
+}
+@media (max-width: 1500px) {
+	.major-service .service-illustration1 {
+		top: -312px;
+		max-width: 356px;
+	}
+	.major-service .service-illustration2 {
+		max-width: 290px;
+	}
+}
+@media (max-width: 1300px) {
+	.major-service .service-illustration1 {
+		top: -292px;
+		max-width: 296px;
+	}
+	.major-service .service-illustration2 {
+		max-width: 260px;
+		top: -270px;
+	}
+}
+@media (max-width: 1199px) {
+	.major-service .service-illustration1 {
+		top: -272px;
+		max-width: 256px;
+	}
+	.major-service .service-illustration2 {
+		top: -240px;
+		max-width: 220px;
+	}
+}
+@media (max-width: 767px) {
+	.major-service .service-illustration1 {
+		display: none;
+	}
+	.major-service .service-illustration2 {
+		display: none;
+	}
+}
+
+
+
+.major-service {
+    background: #00146b;
+    padding-bottom: 60px;
+    padding-top: 86px;
+    box-shadow: 0 -2px 0 #00146b;
+}
+.major-service .overlay{
+    background: #fff;
+    top: inherit;
+    bottom: 0;
+    height: 300px;
+}
+.major-service .section-title{
+    text-align: center;
+    max-width: 730px;
+    width: 100%;
+    margin: 0 auto 75px;
+}
+.major-service .section-title p{
+    color: #fff;
+    margin-top: 32px;
+}
+.major-service .major-service-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+	margin: auto;
+    margin-left: -30px;
+}
+.major-service .single-service {
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    width: calc(100% / 4 - 30px);
+    padding: 60px 50px 50px;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-left: 30px; 
+    box-shadow: 0px 11px 40px 0px rgba(87, 95, 131, 0.1);
+}
+.major-service .single-service.blue-bg {
+    background-color: #081d7a;
+}
+.major-service .single-service .service-icon  {
+    display: inlnie-block;
+}
+.major-service .single-service h5 {
+    margin: 44px 0 28px;
+    font-size: 22px;
+    color: #23252d;
+    line-height: 1.2;
+}
+.major-service .single-service p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #23252d;
+}
+.major-service .single-service.blue-bg p,
+.major-service .single-service.blue-bg h5{
+    color: #fff;
+}
+.major-service .major-service-btn{
+    text-align:center;
+    margin-top: 50px;
+}
+
+.cr-pricing.jsx-2612711938 .section-title.jsx-2612711938 {
+    margin: 0 auto 75px;
+    max-width: 640px;
+}
+
+
+
+@media (min-width: 1922px) {
+    .service-illustration-wrapper{
+        max-width: 1920px;
+        position: absolute;
+        top: 0;
+        right: 50%;
+        width: 100%;
+        height: 100%;
+        transform: translateX(50%);
+    }
+}
+
+@media (max-width: 1500px) {
+    .major-service {
+        padding-top: 46px;
+    }
+    .major-service .single-service {
+        padding: 50px 20px 40px;
+    }
+    
+
+}
+
+@media (max-width: 1199px) {
+    .major-service  {
+        padding-top: 0;
+    }
+    .major-service .single-service {
+        width: calc(100% / 2 - 30px);
+    }
+
+}
+
+@media (max-width: 991px) {
+    .major-service {
+        margin-bottom: 0;
+    }
+    
+
+}
+
+@media (max-width: 767px) {
+    
+    .major-service {
+        padding-top: 40px;
+    }
+    .major-service .major-service-wrapper{
+        margin-left:0;
+    }
+    .major-service .single-service {
+        width: 100%;
+        margin-left:0;
+    }
+    
+
+}
+.major-service {
+    background: #00146b;
+    padding-bottom: 60px;
+    padding-top: 86px;
+    -webkit-box-shadow: 0 -2px 0#00146b;
+    -moz-box-shadow: 0 -2px 0#00146b;
+    box-shadow: 0 -2px 0#00146b;
+}
+.major-service{
+    padding-top: 46px;
+}
+
+.pos-relative {
+    position: relative;
+}
+.major-service .overlay{
+    background: #fff;
+    top: inherit;
+    bottom: 0;
+    height: 300px;
+}
+.overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+img {
+    border-style: none;
+    display: block;
+    max-width: 100%;
+	height: auto;
+}
+@media (min-width: 1301px)
+{.cr-container {
+    max-width: 1280px;
+}
+}
+
+.cr-container, .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.cr-row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.cr-col {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.circular-700 {
+    font-family: Circular Std Bold;
+}
+
+.color-fff {
+    color: #fff;
+}
+
+
+/* For Button */
+.cr-btn-default {
+    display: inline-block;
+    height: 60px;
+    line-height: 62px;
+    padding: 0px 50px;
+    font-size: 14px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    font-weight: 700;
+    color: #00b4ff;
+    font-family: Circular Std Bold;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.svg-btn-effect {
+    position: relative;
+    display: inline-block;
+}
+.svg-btn-effect svg {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.svg-btn-effect svg rect {
+    fill: none;
+    stroke: #00b4ff;
+    stroke-dasharray: 353,0;
+    stroke-width: 2px;
+    stroke-dashoffset: 0;
+    transition: all 1s ease;
+}
+.svg-btn-effect:hover svg rect {
+    stroke-dasharray: 154,537;
+    stroke-dashoffset: 420;
+}
+.cr-btn-default{
+	color:#00b4ff !important;
+	text-decoration: none !important;
+}
+.cr-btn-default:hover{
+	color:#00b4ff !important;
+}
