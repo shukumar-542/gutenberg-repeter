@@ -1,0 +1,37 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "create-block/join-team-about",
+  "version": "0.1.0",
+  "title": "Join Team About",
+  "category": "widgets",
+  "icon": "smiley",
+  "description": "Example block scaffolded with Create Block tool.",
+  "example": {},
+  "supports": {
+    "html": false
+  },
+  "textdomain": "join-team-about",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "selector": "h1",
+      "source": "html"
+    },
+    "description": {
+      "type": "string",
+      "selector": "p",
+      "source": "html"
+    },
+    "imageLeft": {
+      "type": "string"
+    },
+    "imageRight": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,219 @@
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/style.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************/
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+.cr-join-team .join-content .description p {
+  font-size: 26px;
+  line-height: 46px;
+}
+
+.cr-join-team .team-illustration {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.cr-join-team .team-illustration1 {
+  left: 0;
+}
+
+.cr-join-team .team-illustration2 {
+  right: 0;
+  max-width: 700px;
+  margin-top: -30px;
+}
+
+@media (max-width: 1700px) {
+  .cr-join-team .team-illustration1 {
+    max-width: 320px;
+  }
+  .cr-join-team .team-illustration2 {
+    max-width: 570px;
+    margin-top: 0;
+  }
+}
+@media (max-width: 1500px) {
+  .cr-join-team .team-illustration1 {
+    max-width: 270px;
+  }
+  .cr-join-team .team-illustration2 {
+    max-width: 450px;
+  }
+}
+@media (max-width: 1300px) {
+  .cr-join-team .team-illustration1 {
+    max-width: 240px;
+  }
+  .cr-join-team .team-illustration2 {
+    max-width: 410px;
+  }
+}
+@media (max-width: 1199px) {
+  .cr-join-team .team-illustration1 {
+    display: none;
+  }
+}
+@media (max-width: 991px) {
+  .cr-join-team .join-content .description p {
+    margin-bottom: 35px;
+    font-size: 22px;
+    line-height: 34px;
+  }
+  .cr-join-team .team-illustration2 {
+    max-width: 330px;
+  }
+}
+@media (max-width: 767px) {
+  .cr-join-team .team-illustration2 {
+    display: none;
+  }
+}
+.cr-join-team {
+  background: #f3f7ff;
+  padding-bottom: 130px;
+  padding-top: 143px;
+  margin-top: 52px;
+  position: relative;
+}
+
+.cr-join-team .join-content {
+  max-width: 745px;
+  padding-left: 216px;
+  overflow: hidden;
+  position: relative;
+  z-index: 3;
+}
+
+.cr-join-team .join-content h2 {
+  margin-bottom: 25px;
+}
+
+.cr-join-team .join-content .description {
+  margin-bottom: 45px;
+}
+
+@media (min-width: 1922px) {
+  .team-illustration-wrapper {
+    max-width: 1920px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 50%;
+    transform: translateX(50%);
+    z-index: 2;
+  }
+}
+@media (max-width: 1700px) {
+  .cr-join-team {
+    margin-top: 12px;
+  }
+  .cr-join-team .join-content {
+    max-width: 825px;
+    padding-left: 306px;
+  }
+}
+@media (max-width: 1500px) {
+  .cr-join-team {
+    padding-bottom: 100px;
+    padding-top: 93px;
+    margin-top: 0;
+  }
+}
+@media (max-width: 1300px) {
+  .cr-join-team .join-content {
+    max-width: 755px;
+    padding-left: 236px;
+  }
+}
+@media (max-width: 1199px) {
+  .cr-join-team .join-content {
+    max-width: 525px;
+    padding-left: 0;
+  }
+}
+@media (max-width: 991px) {
+  .cr-join-team .team-illustration2 {
+    max-width: 330px;
+  }
+  .cr-join-team .join-content {
+    max-width: 385px;
+  }
+}
+@media (max-width: 767px) {
+  .cr-join-team .team-illustration2 {
+    display: none;
+  }
+  .cr-join-team {
+    padding-bottom: 70px;
+  }
+  .cr-join-team .join-content {
+    max-width: 100%;
+    text-align: center;
+  }
+}
+.section-padding {
+  padding: 150px 0;
+}
+
+@media (min-width: 1301px) {
+  .cr-container {
+    max-width: 1280px;
+  }
+}
+.cr-container, .container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.cr-row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.cr-col {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.circular-700 {
+  font-family: Circular Std Bold;
+}
+
+.svg-btn-effect {
+  position: relative;
+  display: inline-block;
+}
+
+button[type=submit], input[type=submit], .cr-btn-default {
+  display: inline-block;
+  height: 60px;
+  line-height: 62px;
+  padding: 0px 50px;
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 50px;
+  font-weight: 700;
+  color: #00b4ff;
+  font-family: Circular Std Bold;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=style-index.css.map*/
